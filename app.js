@@ -15,7 +15,7 @@ server.listen(3000, () => {
 // express server
 const express = require('express');
 const app = express();
-const Task = require('./models/task');
+const Task = require('./models/Task');
 
 // API end point
 app.get('/', (req, res) => {
