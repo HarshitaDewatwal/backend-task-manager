@@ -78,7 +78,7 @@ const app = express();
 connectDB();
 
 //middleware
-app.use(exxpress.json());
+app.use(express.json());
 
 //routes
 app.use('/api/tasks', taskRoutes);
