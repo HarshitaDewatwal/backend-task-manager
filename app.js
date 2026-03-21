@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
     console.log("Server running on port 3000");
 });
-*/
+
 
 // express server
 const express = require('express');
@@ -64,3 +64,25 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/taskmanager')
 .then(() => console.log("DB connected"))
 .catch(err => console.log(err));      
+
+
+*/
+
+const express = require('express');
+const connectDB = require('./config/db');
+const taskRoutes = require('./routes/taskRoutes');
+
+const app = express();
+
+//connect database
+connectDB();
+
+//middleware
+app.use(exxpress.json());
+
+//routes
+app.use('/api/tasks', taskRoutes);
+
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
